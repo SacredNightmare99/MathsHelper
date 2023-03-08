@@ -36,10 +36,10 @@
         android:id="@+id/degree3RG"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="50dp"
         app:layout_constraintTop_toBottomOf="@+id/degree3EquationSolution">
 
         <RadioButton
@@ -60,6 +60,112 @@
 
     </RadioGroup>
 
+    <EditText
+        android:id="@+id/degree3RealRoot1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="1st Root"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal|numberSigned"
+        android:minHeight="48dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/degree3RealRoot2"
+        app:layout_constraintEnd_toStartOf="@+id/degree3RealRoot2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/degree3RealRoot2" />
 
+    <EditText
+        android:id="@+id/degree3RealRoot2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:hint="2nd Root"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal|numberSigned"
+        android:minHeight="48dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/degree3RealRoot3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/degree3RealRoot1"
+        app:layout_constraintTop_toBottomOf="@+id/degree3RG" />
+
+    <EditText
+        android:id="@+id/degree3RealRoot3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="3rd Root"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal|numberSigned"
+        android:minHeight="48dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/degree3RealRoot2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/degree3RealRoot2"
+        app:layout_constraintTop_toTopOf="@+id/degree3RealRoot2" />
+
+
+    <EditText
+        android:id="@+id/degree3UnrealRootReal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:hint="Real Root"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal|numberSigned"
+        android:minHeight="48dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/degree3RG" />
+
+    <EditText
+        android:id="@+id/degree3UnrealRootImageRP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Unreal Root\n Real Part"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal|numberSigned"
+        android:minHeight="48dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@+id/degree3UnrealRootImageIP"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/degree3UnrealRootReal" />
+
+    <EditText
+        android:id="@+id/degree3UnrealRootImageIP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Unreal Root\nUnreal Part"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal|numberSigned"
+        android:minHeight="48dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/degree3UnrealRootImageRP"
+        app:layout_constraintTop_toBottomOf="@+id/degree3UnrealRootReal" />
+
+    <Button
+        android:id="@+id/degree3EquationSolveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:text="Solve"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/degree3RG" />
+
+    <Button
+        android:id="@+id/degree3EquationBackBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/degree3EquationSolveBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
