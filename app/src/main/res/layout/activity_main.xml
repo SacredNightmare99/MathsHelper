@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txtMainTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="Choose Function!"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/degree2Btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="2-Degree"
+        app:layout_constraintEnd_toEndOf="@+id/txtMainTitle"
+        app:layout_constraintStart_toStartOf="@+id/txtMainTitle"
+        app:layout_constraintTop_toBottomOf="@+id/txtMainTitle" />
+
+    <Button
+        android:id="@+id/degree3Btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="3-Degree"
+        app:layout_constraintEnd_toEndOf="@+id/degree2Btn"
+        app:layout_constraintStart_toStartOf="@+id/degree2Btn"
+        app:layout_constraintTop_toBottomOf="@+id/degree2Btn" />
+
+    <Button
+        android:id="@+id/cmplxNumbersBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Complex Numbers"
+        app:layout_constraintEnd_toEndOf="@+id/degree3Btn"
+        app:layout_constraintStart_toStartOf="@+id/degree3Btn"
+        app:layout_constraintTop_toBottomOf="@+id/degree3Btn" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

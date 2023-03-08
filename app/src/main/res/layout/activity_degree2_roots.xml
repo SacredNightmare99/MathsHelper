@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".Degree2.Degree2RootsActivity">
+
+    <TextView
+        android:id="@+id/txtRoots2Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="Ax² + Bx + C = 0"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/degree2RootsSolutionView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="Root1:        Root2:"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="@+id/txtRoots2Title"
+        app:layout_constraintStart_toStartOf="@+id/txtRoots2Title"
+        app:layout_constraintTop_toBottomOf="@+id/txtRoots2Title" />
+
+    <EditText
+        android:id="@+id/coeff2A"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="2"
+        android:hint="A"
+        android:importantForAutofill="no"
+        android:inputType="numberSigned|numberDecimal"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/coeff2B"
+        app:layout_constraintEnd_toStartOf="@+id/coeff2B"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/coeff2B" />
+
+    <EditText
+        android:id="@+id/coeff2B"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:ems="2"
+        android:hint="B"
+        android:importantForAutofill="no"
+        android:inputType="numberSigned|numberDecimal"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/degree2RootsSolutionView"
+        app:layout_constraintStart_toStartOf="@+id/degree2RootsSolutionView"
+        app:layout_constraintTop_toBottomOf="@+id/degree2RootsSolutionView" />
+
+    <EditText
+        android:id="@+id/coeff2C"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="2"
+        android:hint="C"
+        android:importantForAutofill="no"
+        android:inputType="numberSigned|numberDecimal"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/coeff2B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/coeff2B"
+        app:layout_constraintTop_toTopOf="@+id/coeff2B" />
+
+    <Button
+        android:id="@+id/degree2RootsSolveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Solve"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coeff2B" />
+
+    <Button
+        android:id="@+id/degree2RootsBackBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Back"
+        app:layout_constraintEnd_toEndOf="@+id/degree2RootsSolveBtn"
+        app:layout_constraintStart_toStartOf="@+id/degree2RootsSolveBtn"
+        app:layout_constraintTop_toBottomOf="@+id/degree2RootsSolveBtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
