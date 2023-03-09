@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import com.sacrednightmare99.mathshelper.Complex.ComplexActivity;
 import com.sacrednightmare99.mathshelper.Degree2.Degree2MenuActivity;
+import com.sacrednightmare99.mathshelper.Degree3.Degree3MenuActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,12 +22,7 @@ public class MainActivity extends AppCompatActivity {
         degree2Btn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, Degree2MenuActivity.class)));
 
         Button degree3Btn = findViewById(R.id.degree3Btn);
-        degree3Btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+        degree3Btn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, Degree3MenuActivity.class)));
 
         Button cmplxNumbersBtn = findViewById(R.id.cmplxNumbersBtn);
         cmplxNumbersBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ComplexActivity.class)));
