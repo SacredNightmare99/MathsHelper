@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".Settings.SettingsActivity">
+
+    <TextView
+        android:id="@+id/txtSettingsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/settings"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtSettingsTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/theme"
+        android:layout_marginTop="100dp"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSettingsTitle" />
+
+    <RadioGroup
+        android:id="@+id/settingsThemeRG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/txtSettingsTheme"
+        app:layout_constraintTop_toBottomOf="@+id/txtSettingsTheme">
+
+        <RadioButton
+            android:id="@+id/settingsNoThemeRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_theme"
+            android:textStyle="italic" />
+
+        <RadioButton
+            android:id="@+id/settingsRedThemeRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/red_theme"
+            android:textStyle="italic" />
+
+        <RadioButton
+            android:id="@+id/settingsBlueThemeRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/blue_theme"
+            android:textStyle="italic" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/settingsBackBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

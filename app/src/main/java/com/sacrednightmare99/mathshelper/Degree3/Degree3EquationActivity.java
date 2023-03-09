@@ -1,7 +1,11 @@
 package com.sacrednightmare99.mathshelper.Degree3;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.content.SharedPreferences;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sacrednightmare99.mathshelper.R;
+import com.sacrednightmare99.mathshelper.Settings.UserSettings;
 
 import java.text.DecimalFormat;
 
@@ -22,13 +27,18 @@ public class Degree3EquationActivity extends AppCompatActivity {
     private Button solveBtn, backBtn;
     private String solution = "Ax³ + Bx² + Cx + D = 0";
     private final DecimalFormat df = new DecimalFormat("#.##");
+    private UserSettings userSettings;
+    private View parentView;
+    private ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_degree3_equation);
 
+        userSettings = (UserSettings) getApplication();
         initWidgets();
+        loadSharedPreferences();
 
         backBtn.setOnClickListener(View -> finish());
 
@@ -127,7 +137,6 @@ public class Degree3EquationActivity extends AppCompatActivity {
         } else {
             solution = "x³ + " + df.format(B) + "x² + " + df.format(C) + "x + " + df.format(D) + " = 0";
         }
-
     }
 
     private void solveUnreal() {
@@ -215,6 +224,8 @@ public class Degree3EquationActivity extends AppCompatActivity {
         radioGroup = findViewById(R.id.degree3RG);
         solveBtn = findViewById(R.id.degree3EquationSolveBtn);
         backBtn = findViewById(R.id.degree3EquationBackBtn);
+        parentView = findViewById(R.id.parentView);
+        actionBar = getSupportActionBar();
     }
 
     private void showReal() {
@@ -246,5 +257,33 @@ public class Degree3EquationActivity extends AppCompatActivity {
         unrealRootRealRoot.setText("");
         unrealRootRP.setText("");
         unrealRootIP.setText("");
+    }
+
+    private void loadSharedPreferences() {
+        SharedPreferences preferences = getSharedPreferences(UserSettings.PREFERENCES, MODE_PRIVATE);
+        String theme = preferences.getString(UserSettings.CUSTOM_THEME, UserSettings.NO_THEME);
+        userSettings.setCustomTheme(theme);
+        updateView();
+    }
+
+    private void updateView() {
+        final int white = ContextCompat.getColor(this, R.color.white);
+        final int red = ContextCompat.getColor(this, R.color.red);
+        final int blue = ContextCompat.getColor(this, R.color.blue);
+
+        switch (userSettings.getCustomTheme()) {
+            case UserSettings.NO_THEME:
+                parentView.setBackgroundColor(white);
+                actionBar.setBackgroundDrawable(new ColorDrawable(white));
+                break;
+            case UserSettings.RED_THEME:
+                parentView.setBackgroundColor(red);
+                actionBar.setBackgroundDrawable(new ColorDrawable(red));
+                break;
+            case UserSettings.BLUE_THEME:
+                parentView.setBackgroundColor(blue);
+                actionBar.setBackgroundDrawable(new ColorDrawable(blue));
+                break;
+        }
     }
 }
