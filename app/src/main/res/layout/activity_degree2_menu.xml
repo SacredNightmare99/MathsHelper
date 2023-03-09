@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
-        android:text="What do you need to find?"
+        android:text="@string/what_do_you_need_to_find"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:text="Roots"
+        android:text="@string/roots"
         app:layout_constraintEnd_toEndOf="@+id/txtDegree2MenuTitle"
         app:layout_constraintStart_toStartOf="@+id/txtDegree2MenuTitle"
         app:layout_constraintTop_toBottomOf="@+id/txtDegree2MenuTitle" />
@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Equation"
+        android:text="@string/equation"
         app:layout_constraintEnd_toEndOf="@+id/degree2RootsBtn"
         app:layout_constraintStart_toStartOf="@+id/degree2RootsBtn"
         app:layout_constraintTop_toBottomOf="@+id/degree2RootsBtn" />
@@ -45,7 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:text="Back"
+        android:text="@string/back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/degree2EquationBtn" />

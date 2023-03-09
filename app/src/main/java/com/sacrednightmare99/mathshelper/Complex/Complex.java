@@ -6,7 +6,7 @@ import java.text.DecimalFormat;
 
 public class Complex {
 
-    private static DecimalFormat df = new DecimalFormat("#.##");
+    private final DecimalFormat df = new DecimalFormat("#.##");
     private final double real;
     private final double image;
 
@@ -20,11 +20,12 @@ public class Complex {
     }
 
     public String modulus() {
-        int a = (int) Math.sqrt(real*real + image*image);
+        double sqrt = Math.sqrt(real * real + image * image);
+        int a = (int) sqrt;
         if (a * a == real * real + image * image) {
             return df.format(a) + "";
         } else {
-            int b = (int) Math.sqrt(real * real + image * image);
+            int b = (int) sqrt;
             return df.format(b) + "√" + df.format((real * real + image * image) / (b * b));
         }
     }
@@ -32,42 +33,59 @@ public class Complex {
     public String argument() {
         double arg = Math.atan2(image, real);
         String argStr = df.format(arg);
-        if (argStr.equals("0.00")) {
-            return "0";
-        } else if (argStr.equals("0.79") || argStr.equals("0.80")) {
-            return "π/4";
-        } else if (argStr.equals("0.52") || argStr.equals("0.53")) {
-            return "π/6";
-        } else if (argStr.equals("1.05") || argStr.equals("1.06")) {
-            return "π/3";
-        } else if (argStr.equals("1.57") || argStr.equals("1.58")) {
-            return "π/2";
-        } else if (argStr.equals("2.09") || argStr.equals("2.10")) {
-            return "2π/3";
-        } else if (argStr.equals("2.35") || argStr.equals("2.36")) {
-            return "3π/4";
-        } else if (argStr.equals("2.57") || argStr.equals("2.58")) {
-            return "5π/6";
-        } else if (argStr.equals("3.14") || argStr.equals("3.15")) {
-            return "π";
-        } else if (argStr.equals("-0.79") || argStr.equals("-0.80")) {
-            return "-π/4";
-        } else if (argStr.equals("-0.52") || argStr.equals("-0.53")) {
-            return "-π/6";
-        } else if (argStr.equals("-1.05") || argStr.equals("-1.06")) {
-            return "-π/3";
-        } else if (argStr.equals("-1.57") || argStr.equals("-1.58")) {
-            return "-π/2";
-        } else if (argStr.equals("-2.09") || argStr.equals("-2.10")) {
-            return "-2π/3";
-        } else if (argStr.equals("-2.35") || argStr.equals("-2.36")) {
-            return "-3π/4";
-        } else if (argStr.equals("-2.57") || argStr.equals("-2.58")) {
-            return "-5π/6";
-        } else if (argStr.equals("-3.14") || argStr.equals("-3.15")) {
-            return "-π";
-        } else {
-            return df.format(Math.toDegrees(arg)) + "°";
+        switch (argStr) {
+            case "0.00":
+                return "0";
+            case "0.79":
+            case "0.80":
+                return "π/4";
+            case "0.52":
+            case "0.53":
+                return "π/6";
+            case "1.05":
+            case "1.06":
+                return "π/3";
+            case "1.57":
+            case "1.58":
+                return "π/2";
+            case "2.09":
+            case "2.10":
+                return "2π/3";
+            case "2.35":
+            case "2.36":
+                return "3π/4";
+            case "2.57":
+            case "2.58":
+                return "5π/6";
+            case "3.14":
+            case "3.15":
+                return "π";
+            case "-0.79":
+            case "-0.80":
+                return "-π/4";
+            case "-0.52":
+            case "-0.53":
+                return "-π/6";
+            case "-1.05":
+            case "-1.06":
+                return "-π/3";
+            case "-1.57":
+            case "-1.58":
+                return "-π/2";
+            case "-2.09":
+            case "-2.10":
+                return "-2π/3";
+            case "-2.35":
+            case "-2.36":
+                return "-3π/4";
+            case "-2.57":
+            case "-2.58":
+                return "-5π/6";
+            case "-3.14":
+            case "-3.15":
+                return "-π";
+            default:
+                return df.format(Math.toDegrees(arg)) + "°";
         }
     }
 

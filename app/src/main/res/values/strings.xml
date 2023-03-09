@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">Maths Helper</string>
+    <string name="choose_function">Choose Function!</string>
+    <string name="_2_degree">2-Degree</string>
+    <string name="_3_degree">3-Degree</string>
+    <string name="complex_numbers">Complex Numbers</string>
+    <string name="what_do_you_need_to_find">What do you need to find?</string>
+    <string name="equation">Equation</string>
+    <string name="back">Back</string>
+    <string name="ax_bx_cx_d_0">Ax³ + Bx² + Cx + D = 0</string>
+    <string name="all_real_roots">All Real Roots</string>
+    <string name="one_real_root">One Real Root</string>
+    <string name="_1st_root">1st Root</string>
+    <string name="_2nd_root">2nd Root</string>
+    <string name="_3rd_root">3rd Root</string>
+    <string name="real_root">Real Root</string>
+    <string name="unreal_root_rp">Unreal Root RP</string>
+    <string name="unreal_root_ip">Unreal Root IP</string>
+    <string name="solve">Solve</string>
+    <string name="ax_bx_c_0">Ax² + Bx + C = 0</string>
+    <string name="root1_root2">Root1: Root2:</string>
+    <string name="a">A</string>
+    <string name="b">B</string>
+    <string name="c">C</string>
+    <string name="roots">Roots</string>
+    <string name="real_roots">Real Roots</string>
+    <string name="unreal_roots">Unreal Roots</string>
+    <string name="real_part">Real Part</string>
+    <string name="unreal_part">Unreal Part</string>
+    <string name="complex_number">Complex Number:</string>
+    <string name="polar_form">Polar form:</string>
+    <string name="euler_s_form">Euler\'s form:</string>
+    <string name="conjugate">Conjugate:</string>
+    <string name="modulus">Modulus:</string>
+    <string name="argument">Argument:</string>
 </resources>

@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
-        android:text="Choose Function!"
+        android:text="@string/choose_function"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:text="2-Degree"
+        android:text="@string/_2_degree"
         app:layout_constraintEnd_toEndOf="@+id/txtMainTitle"
         app:layout_constraintStart_toStartOf="@+id/txtMainTitle"
         app:layout_constraintTop_toBottomOf="@+id/txtMainTitle" />
@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="3-Degree"
+        android:text="@string/_3_degree"
         app:layout_constraintEnd_toEndOf="@+id/degree2Btn"
         app:layout_constraintStart_toStartOf="@+id/degree2Btn"
         app:layout_constraintTop_toBottomOf="@+id/degree2Btn" />
@@ -45,7 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Complex Numbers"
+        android:text="@string/complex_numbers"
         app:layout_constraintEnd_toEndOf="@+id/degree3Btn"
         app:layout_constraintStart_toStartOf="@+id/degree3Btn"
         app:layout_constraintTop_toBottomOf="@+id/degree3Btn" />

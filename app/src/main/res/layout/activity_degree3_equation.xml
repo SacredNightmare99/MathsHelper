@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Ax³ + Bx² + Cx + D = 0"
+        android:text="@string/ax_bx_cx_d_0"
         android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:text="Ax³ + Bx² + Cx + D = 0"
+        android:text="@string/ax_bx_cx_d_0"
         android:textSize="18sp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="@+id/txtEquation3Title"
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="2dp"
             android:checked="true"
-            android:text="All Real Roots" />
+            android:text="@string/all_real_roots" />
 
         <RadioButton
             android:id="@+id/degree3UnrealRootsRB"
@@ -56,7 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="2dp"
             android:checked="false"
-            android:text="One Real Root" />
+            android:text="@string/one_real_root" />
 
     </RadioGroup>
 
@@ -64,7 +64,7 @@
         android:id="@+id/degree3RealRoot1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="1st Root"
+        android:hint="@string/_1st_root"
         android:importantForAutofill="no"
         android:inputType="numberDecimal|numberSigned"
         android:minHeight="48dp"
@@ -80,7 +80,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="2nd Root"
+        android:hint="@string/_2nd_root"
         android:importantForAutofill="no"
         android:inputType="numberDecimal|numberSigned"
         android:minHeight="48dp"
@@ -94,7 +94,7 @@
         android:id="@+id/degree3RealRoot3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="3rd Root"
+        android:hint="@string/_3rd_root"
         android:importantForAutofill="no"
         android:inputType="numberDecimal|numberSigned"
         android:minHeight="48dp"
@@ -111,7 +111,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="Real Root"
+        android:hint="@string/real_root"
         android:importantForAutofill="no"
         android:inputType="numberDecimal|numberSigned"
         android:minHeight="48dp"
@@ -124,7 +124,7 @@
         android:id="@+id/degree3UnrealRootImageRP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Unreal Root RP"
+        android:hint="@string/unreal_root_rp"
         android:importantForAutofill="no"
         android:inputType="numberDecimal|numberSigned"
         android:minHeight="48dp"
@@ -139,7 +139,7 @@
         android:id="@+id/degree3UnrealRootImageIP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Unreal Root IP"
+        android:hint="@string/unreal_root_ip"
         android:layout_marginTop="10dp"
         android:importantForAutofill="no"
         android:inputType="numberDecimal|numberSigned"
@@ -155,7 +155,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="180dp"
-        android:text="Solve"
+        android:text="@string/solve"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/degree3RG" />
@@ -165,7 +165,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="back"
+        android:text="@string/back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/degree3EquationSolveBtn" />

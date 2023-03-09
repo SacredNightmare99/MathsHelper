@@ -54,11 +54,17 @@ public class ComplexActivity extends AppCompatActivity {
         image = Double.parseDouble(imagePartET.getText().toString());
 
         Complex z = new Complex(real, image);
-        cmplxNumberSolView.setText("Complex Number: " + z);
-        polarSolView.setText("Polar form: " + z.toPolarString());
-        conjugateSolView.setText("Conjugate: " + z.conjugate());
-        modSolView.setText("Modulus: " + z.modulus());
-        argSolView.setText("Argument: " + z.argument());
-        eulerSolView.setText("Euler's Form: " + z.toEulerString());
+        String complexSol = "Complex Number: " + z;
+        cmplxNumberSolView.setText(complexSol);
+        String polarSol = "Polar form: " + z.toPolarString();
+        polarSolView.setText(polarSol);
+        String conjSol = "Conjugate: " + z.conjugate();
+        conjugateSolView.setText(conjSol);
+        String modSol = "Modulus: " + z.modulus();
+        modSolView.setText(modSol);
+        String argSol = "Argument: " + z.argument();
+        argSolView.setText(argSol);
+        String eulerSol = "Euler's Form: " + z.toEulerString();
+        eulerSolView.setText(eulerSol);
     }
 }
