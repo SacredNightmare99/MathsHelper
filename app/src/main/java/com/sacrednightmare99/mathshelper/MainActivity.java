@@ -20,6 +20,7 @@ import com.sacrednightmare99.mathshelper.Degree2.Degree2MenuActivity;
 import com.sacrednightmare99.mathshelper.Degree3.Degree3MenuActivity;
 import com.sacrednightmare99.mathshelper.Settings.SettingsActivity;
 import com.sacrednightmare99.mathshelper.Settings.UserSettings;
+import com.sacrednightmare99.mathshelper.UnitConverter.UnitConverterMenuActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,7 +49,8 @@ public class MainActivity extends AppCompatActivity {
         Button cmplxNumbersBtn = findViewById(R.id.cmplxNumbersBtn);
         cmplxNumbersBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ComplexActivity.class)));
 
-
+        Button unitConverterBtn = findViewById(R.id.unitConvertBtn);
+        unitConverterBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, UnitConverterMenuActivity.class)));
     }
 
     @Override
