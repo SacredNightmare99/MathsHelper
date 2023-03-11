@@ -18,7 +18,7 @@
     <string name="unreal_root_ip">Unreal Root IP</string>
     <string name="solve">Solve</string>
     <string name="ax_bx_c_0">Ax² + Bx + C = 0</string>
-    <string name="root1_root2">Root1: Root2:</string>
+    <string name="root1_root2">Root1:   Root2:</string>
     <string name="a">A</string>
     <string name="b">B</string>
     <string name="c">C</string>

@@ -7,6 +7,7 @@ import androidx.core.content.ContextCompat;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +21,7 @@ import java.text.DecimalFormat;
 
 public class Degree2RootsActivity extends AppCompatActivity {
 
+    private int textSize;
     private TextView solutionView;
     private EditText coeffA, coeffB, coeffC;
     private Button backBtn, solveBtn;
@@ -33,14 +35,26 @@ public class Degree2RootsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_degree2_roots);
 
         userSettings = (UserSettings) getApplication();
-
         initWidgets();
-
         loadSharedPreferences();
 
         backBtn.setOnClickListener(View -> finish());
 
         solveBtn.setOnClickListener(View -> solve());
+
+        // To change the font size
+        textSize = 20;
+        final Handler handler = new Handler();
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                while(solutionView.getLineCount() > 1){
+                    solutionView.setTextSize(--textSize);
+                }
+                handler.postDelayed(this, 1000);
+            }
+        };
+        handler.postDelayed(runnable, 1000);
     }
 
     private void initWidgets() {
@@ -55,7 +69,7 @@ public class Degree2RootsActivity extends AppCompatActivity {
     }
 
     private void solve() {
-        DecimalFormat df = new DecimalFormat("0.00");
+        DecimalFormat df = new DecimalFormat("#.##");
         double a, b, c;
         double x1, x2;
         String solution;
