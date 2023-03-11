@@ -20,8 +20,6 @@ import com.sacrednightmare99.mathshelper.Settings.UserSettings;
 import java.text.DecimalFormat;
 
 public class Degree2RootsActivity extends AppCompatActivity {
-
-    private int textSize;
     private TextView solutionView;
     private EditText coeffA, coeffB, coeffC;
     private Button backBtn, solveBtn;
@@ -43,18 +41,7 @@ public class Degree2RootsActivity extends AppCompatActivity {
         solveBtn.setOnClickListener(View -> solve());
 
         // To change the font size
-        textSize = 20;
-        final Handler handler = new Handler();
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                while(solutionView.getLineCount() > 1){
-                    solutionView.setTextSize(--textSize);
-                }
-                handler.postDelayed(this, 1000);
-            }
-        };
-        handler.postDelayed(runnable, 1000);
+        updateTextSize(solutionView);
     }
 
     private void initWidgets() {
@@ -137,5 +124,20 @@ public class Degree2RootsActivity extends AppCompatActivity {
                 actionBar.setBackgroundDrawable(new ColorDrawable(blue));
                 break;
         }
+    }
+
+    private void updateTextSize(TextView textView) {
+        final float[] textSize = {20};
+        final Handler handler = new Handler();
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                while(textView.getLineCount() > 1){
+                    textView.setTextSize(textSize[0]--);
+                }
+                handler.postDelayed(this, 1000);
+            }
+        };
+        handler.postDelayed(runnable, 1000);
     }
 }

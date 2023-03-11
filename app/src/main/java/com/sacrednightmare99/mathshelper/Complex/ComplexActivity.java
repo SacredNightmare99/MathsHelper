@@ -7,6 +7,7 @@ import androidx.core.content.ContextCompat;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,6 +38,13 @@ public class ComplexActivity extends AppCompatActivity {
         backBtn.setOnClickListener(View -> finish());
 
         solveBtn.setOnClickListener(View -> solve());
+
+        updateTextSize(cmplxNumberSolView);
+        updateTextSize(polarSolView);
+        updateTextSize(eulerSolView);
+        updateTextSize(conjugateSolView);
+        updateTextSize(modSolView);
+        updateTextSize(argSolView);
     }
 
     private void initWidgets() {
@@ -107,5 +115,20 @@ public class ComplexActivity extends AppCompatActivity {
                 actionBar.setBackgroundDrawable(new ColorDrawable(blue));
                 break;
         }
+    }
+
+    private void updateTextSize(TextView textView) {
+        final float[] textSize = {16};
+        final Handler handler = new Handler();
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                while(textView.getLineCount() > 1){
+                    textView.setTextSize(textSize[0]--);
+                }
+                handler.postDelayed(this, 1000);
+            }
+        };
+        handler.postDelayed(runnable, 1000);
     }
 }

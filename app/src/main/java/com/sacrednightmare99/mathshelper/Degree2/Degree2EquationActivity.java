@@ -7,6 +7,7 @@ import androidx.core.content.ContextCompat;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -65,6 +66,8 @@ public class Degree2EquationActivity extends AppCompatActivity {
             }
             solutionView.setText(solution);
         });
+
+        updateTextSize(solutionView);
     }
 
     private void solveReal() {
@@ -178,4 +181,18 @@ public class Degree2EquationActivity extends AppCompatActivity {
         }
     }
 
+    private void updateTextSize(TextView textView) {
+        final float[] textSize = {20};
+        final Handler handler = new Handler();
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                while(textView.getLineCount() > 1){
+                    textView.setTextSize(textSize[0]--);
+                }
+                handler.postDelayed(this, 1000);
+            }
+        };
+        handler.postDelayed(runnable, 1000);
+    }
 }
