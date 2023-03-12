@@ -4,6 +4,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -33,6 +34,9 @@ public class UnitConverterMenuActivity extends AppCompatActivity {
 
         Button backBtn = findViewById(R.id.unitConvertBackBtn);
         backBtn.setOnClickListener(View -> finish());
+
+        Button lengthBtn = findViewById(R.id.lengthConvertBtn);
+        lengthBtn.setOnClickListener(View -> startActivity(new Intent(UnitConverterMenuActivity.this, LengthConverterActivity.class)));
     }
 
     private void loadSharedPreferences() {

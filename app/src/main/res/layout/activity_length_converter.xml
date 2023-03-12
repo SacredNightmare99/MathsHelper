@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".UnitConverter.LengthConverterActivity">
+
+    <TextView
+        android:id="@+id/txtLengthConverterTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="@string/length_converter"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/lengthConvertCardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        app:cardBackgroundColor="@color/black"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLengthConverterTitle">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <Spinner
+                android:id="@+id/lengthConverter1SP"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:entries="@array/length_units"
+                android:minHeight="48dp"
+                app:layout_constraintBottom_toBottomOf="@+id/txtTo"
+                app:layout_constraintEnd_toStartOf="@+id/lengthConverter2SP"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txtTo"
+                app:layout_constraintVertical_bias="0.5"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <TextView
+                android:id="@+id/txtTo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="10dp"
+                android:text="@string/to"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintEnd_toStartOf="@+id/lengthConverter2SP"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/lengthConverter1SP"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/lengthConverter2SP"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:entries="@array/length_units"
+                android:minHeight="48dp"
+                app:layout_constraintBottom_toBottomOf="@+id/txtTo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/lengthConverter1SP"
+                app:layout_constraintTop_toTopOf="@+id/txtTo"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <EditText
+                android:id="@+id/lengthConverterInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="7"
+                android:hint="@string/number"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal|number"
+                android:minHeight="48dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white_accent"
+                app:layout_constraintEnd_toEndOf="@+id/lengthConverter1SP"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/lengthConverter1SP"
+                app:layout_constraintTop_toBottomOf="@+id/lengthConverter1SP" />
+
+            <TextView
+                android:id="@+id/lengthConverterOutput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_0_00000"
+                android:textColor="@color/white"
+                android:textSize="28sp"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="@+id/lengthConverterInput"
+                app:layout_constraintEnd_toEndOf="@+id/lengthConverter2SP"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/lengthConverter2SP"
+                app:layout_constraintTop_toTopOf="@+id/lengthConverterInput" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <Button
+        android:id="@+id/lengthConverterSolveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="@string/solve"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lengthConvertCardView" />
+
+    <Button
+        android:id="@+id/lengthConverterBackBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/back"
+        app:layout_constraintEnd_toEndOf="@+id/lengthConverterSolveBtn"
+        app:layout_constraintStart_toStartOf="@+id/lengthConverterSolveBtn"
+        app:layout_constraintTop_toBottomOf="@+id/lengthConverterSolveBtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

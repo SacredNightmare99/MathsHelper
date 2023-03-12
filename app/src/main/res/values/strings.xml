@@ -38,4 +38,18 @@
     <string name="no_theme">No Theme</string>
     <string name="red_theme">Red Theme</string>
     <string name="blue_theme">Blue Theme</string>
+    <string name="length_converter">Length Converter</string>
+    <string name="to">to</string>
+    <string name="number">Number</string>
+    <string name="_0_00000">0.00000</string>
+
+    <string-array name="length_units">
+
+        <item>Meters</item>
+        <item>Kilometers</item>
+        <item>feet</item>
+        <item>inches</item>
+        <item>miles</item>
+
+    </string-array>
 </resources>

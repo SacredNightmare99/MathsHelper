@@ -192,4 +192,28 @@ public class Length {
         MILES_TO_INCHES = milesToInches;
     }
 
+    public static void setAllFalse () {
+        SAME_UNITS = false;
+        METER_TO_KILOMETER = false;
+        METER_TO_FEET = false;
+        METER_TO_INCHES = false;
+        METER_TO_MILES = false;
+        KILOMETER_TO_METER = false;
+        KILOMETER_TO_FEET = false;
+        KILOMETER_TO_INCHES = false;
+        KILOMETER_TO_MILES = false;
+        FEET_TO_METER = false;
+        FEET_TO_KILOMETER = false;
+        FEET_TO_INCHES = false;
+        FEET_TO_MILES = false;
+        INCHES_TO_METER = false;
+        INCHES_TO_KILOMETER = false;
+        INCHES_TO_FEET = false;
+        INCHES_TO_MILES = false;
+        MILES_TO_METER = false;
+        MILES_TO_KILOMETER = false;
+        MILES_TO_FEET = false;
+        MILES_TO_INCHES = false;
+    }
+
 }
