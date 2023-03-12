@@ -1,9 +1,5 @@
 package com.sacrednightmare99.mathshelper.Degree2;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -13,6 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.sacrednightmare99.mathshelper.R;
 import com.sacrednightmare99.mathshelper.Settings.UserSettings;
@@ -127,7 +127,9 @@ public class Degree2RootsActivity extends AppCompatActivity {
     }
 
     private void updateTextSize(TextView textView) {
+        textView.setMaxLines(1);
         final float[] textSize = {20};
+
         final Handler handler = new Handler();
         Runnable runnable = new Runnable() {
             @Override
@@ -135,6 +137,7 @@ public class Degree2RootsActivity extends AppCompatActivity {
                 while(textView.getLineCount() > 1){
                     textView.setTextSize(textSize[0]--);
                 }
+
                 handler.postDelayed(this, 1000);
             }
         };
