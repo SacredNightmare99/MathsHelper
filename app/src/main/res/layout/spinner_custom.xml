@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/spinner_text"
     style="?android:attr/spinnerDropDownItemStyle"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="start"
-    android:padding="5dp"
+    android:gravity="center_vertical"
+    android:padding="8dp"
     android:textColor="@color/white"
-    android:textSize="17sp" />
+    android:textSize="16sp" />
 

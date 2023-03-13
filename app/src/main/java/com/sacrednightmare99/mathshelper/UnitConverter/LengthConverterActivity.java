@@ -1,20 +1,19 @@
 package com.sacrednightmare99.mathshelper.UnitConverter;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.sacrednightmare99.mathshelper.R;
 import com.sacrednightmare99.mathshelper.Settings.UserSettings;
@@ -54,12 +53,12 @@ public class LengthConverterActivity extends AppCompatActivity {
         unitsList.add("Inches");
         unitsList.add("Miles");
 
-        ArrayAdapter<String> unitsAdapter = new ArrayAdapter<>(
+        CustomAdapter unitsAdapter = new CustomAdapter(
                 this,
                 R.layout.spinner_custom,
+                R.layout.spinner_custom_dropdown,
                 unitsList
         );
-        unitsAdapter.setDropDownViewResource(R.layout.spinner_custom_dropdown);
 
         firstUnitSP.setAdapter(unitsAdapter);
         secondUnitSP.setAdapter(unitsAdapter);
