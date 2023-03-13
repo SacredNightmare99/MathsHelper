@@ -34,6 +34,7 @@ public class LengthConverterActivity extends AppCompatActivity {
     private TextView solutionView;
     private EditText input;
     private String solution;
+    private Length length;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +68,10 @@ public class LengthConverterActivity extends AppCompatActivity {
         secondUnitSPListener();
 
         solveBtn.setOnClickListener(View -> {
+            if (input.getText().toString().isEmpty()) {
+                Toast.makeText(this, "Provide some Value", Toast.LENGTH_SHORT).show();
+                return;
+            }
             solve();
             solutionView.setText(solution);
         });
@@ -81,74 +86,52 @@ public class LengthConverterActivity extends AppCompatActivity {
         solveBtn = findViewById(R.id.lengthConverterSolveBtn);
         solutionView = findViewById(R.id.lengthConverterOutput);
         input = findViewById(R.id.lengthConverterInput);
+        length = new Length();
     }
 
     private void checkWhatToConvert() {
         if (firstUnitSP.getSelectedItem().equals(secondUnitSP.getSelectedItem()) || secondUnitSP.getSelectedItem().equals(firstUnitSP.getSelectedItem())) {
-            Length.setAllFalse();
-            Length.setSameUnits(true);
+            length.setCurrentConversion(Length.SAME_UNITS);
         } else if (firstUnitSP.getSelectedItem().toString().equals("Meters") && secondUnitSP.getSelectedItem().toString().equals("Kilometers")) {
-            Length.setAllFalse();
-            Length.setMeterToKilometer(true);
+            length.setCurrentConversion(Length.METER_TO_KILOMETER);
         } else if (firstUnitSP.getSelectedItem().toString().equals("Meters") && secondUnitSP.getSelectedItem().toString().equals("Feet")) {
-            Length.setAllFalse();
-            Length.setMeterToFeet(true);
+            length.setCurrentConversion(Length.METER_TO_FEET);
         } else if (firstUnitSP.getSelectedItem().toString().equals("Meters") && secondUnitSP.getSelectedItem().toString().equals("Inches")) {
-            Length.setAllFalse();
-            Length.setMeterToInches(true);
+            length.setCurrentConversion(Length.METER_TO_INCHES);
         } else if (firstUnitSP.getSelectedItem().toString().equals("Meters") && secondUnitSP.getSelectedItem().toString().equals("Miles")) {
-            Length.setAllFalse();
-            Length.setMeterToMiles(true);
+            length.setCurrentConversion(Length.METER_TO_MILES);
         } else if (firstUnitSP.getSelectedItem().toString().equals("Kilometers") && secondUnitSP.getSelectedItem().toString().equals("Meters")) {
-            Length.setAllFalse();
-            Length.setKilometerToMeter(true);
+            length.setCurrentConversion(Length.KILOMETER_TO_METER);
         } else if (firstUnitSP.getSelectedItem().toString().equals("Kilometers") && secondUnitSP.getSelectedItem().toString().equals("Feet")) {
-            Length.setAllFalse();
-            Length.setKilometerToFeet(true);
+            length.setCurrentConversion(Length.KILOMETER_TO_FEET);
         } else if (firstUnitSP.getSelectedItem().toString().equals("Kilometers") && secondUnitSP.getSelectedItem().toString().equals("Inches")) {
-            Length.setAllFalse();
-            Length.setKilometerToInches(true);
+            length.setCurrentConversion(Length.KILOMETER_TO_INCHES);
         } else if (firstUnitSP.getSelectedItem().toString().equals("Kilometers") && secondUnitSP.getSelectedItem().toString().equals("Miles")) {
-            Length.setAllFalse();
-            Length.setKilometerToMiles(true);
+            length.setCurrentConversion(Length.KILOMETER_TO_MILES);
         } else if (firstUnitSP.getSelectedItem().toString().equals("Feet") && secondUnitSP.getSelectedItem().toString().equals("Meters")) {
-            Length.setAllFalse();
-            Length.setFeetToMeter(true);
+            length.setCurrentConversion(Length.FEET_TO_METER);
         } else if (firstUnitSP.getSelectedItem().toString().equals("Feet") && secondUnitSP.getSelectedItem().toString().equals("Kilometers")) {
-            Length.setAllFalse();
-            Length.setFeetToKilometer(true);
+            length.setCurrentConversion(Length.FEET_TO_KILOMETER);
         } else if (firstUnitSP.getSelectedItem().toString().equals("Feet") && secondUnitSP.getSelectedItem().toString().equals("Inches")) {
-            Length.setAllFalse();
-            Length.setFeetToInches(true);
+            length.setCurrentConversion(Length.FEET_TO_INCHES);
         } else if (firstUnitSP.getSelectedItem().toString().equals("Feet") && secondUnitSP.getSelectedItem().toString().equals("Miles")) {
-            Length.setAllFalse();
-            Length.setFeetToMiles(true);
+            length.setCurrentConversion(Length.FEET_TO_MILES);
         } else if (firstUnitSP.getSelectedItem().toString().equals("Inches") && secondUnitSP.getSelectedItem().toString().equals("Meters")) {
-            Length.setAllFalse();
-            Length.setInchesToMeter(true);
+            length.setCurrentConversion(Length.INCHES_TO_METER);
         } else if (firstUnitSP.getSelectedItem().toString().equals("Inches") && secondUnitSP.getSelectedItem().toString().equals("Kilometers")) {
-            Length.setAllFalse();
-            Length.setInchesToKilometer(true);
+            length.setCurrentConversion(Length.INCHES_TO_KILOMETER);
         } else if (firstUnitSP.getSelectedItem().toString().equals("Inches") && secondUnitSP.getSelectedItem().toString().equals("Feet")) {
-            Length.setAllFalse();
-            Length.setInchesToFeet(true);
+            length.setCurrentConversion(Length.INCHES_TO_FEET);
         } else if (firstUnitSP.getSelectedItem().toString().equals("Inches") && secondUnitSP.getSelectedItem().toString().equals("Miles")) {
-            Length.setAllFalse();
-            Length.setInchesToMiles(true);
+            length.setCurrentConversion(Length.INCHES_TO_MILES);
         } else if (firstUnitSP.getSelectedItem().toString().equals("Miles") && secondUnitSP.getSelectedItem().toString().equals("Meters")) {
-            Length.setAllFalse();
-            Length.setMilesToMeter(true);
+            length.setCurrentConversion(Length.MILES_TO_METER);
         } else if (firstUnitSP.getSelectedItem().toString().equals("Miles") && secondUnitSP.getSelectedItem().toString().equals("Kilometers")) {
-            Length.setAllFalse();
-            Length.setMilesToKilometer(true);
+            length.setCurrentConversion(Length.MILES_TO_KILOMETER);
         } else if (firstUnitSP.getSelectedItem().toString().equals("Miles") && secondUnitSP.getSelectedItem().toString().equals("Feet")) {
-            Length.setAllFalse();
-            Length.setMilesToFeet(true);
+            length.setCurrentConversion(Length.MILES_TO_FEET);
         } else if (firstUnitSP.getSelectedItem().toString().equals("Miles") && secondUnitSP.getSelectedItem().toString().equals("Inches")) {
-            Length.setAllFalse();
-            Length.setMilesToInches(true);
-        } else {
-            Length.setAllFalse();
+            length.setCurrentConversion(Length.MILES_TO_INCHES);
         }
     }
 
@@ -213,54 +196,73 @@ public class LengthConverterActivity extends AppCompatActivity {
     private void solve() {
         checkWhatToConvert();
 
-        if (input.getText().toString().isEmpty()) {
-            Toast.makeText(LengthConverterActivity.this, "Provide a value!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (Length.isSameUnits()) {
-            convertSame();
-        } else if (Length.isMeterToKilometer()) {
-            meterToKilometer();
-        } else if (Length.isMeterToFeet()) {
-            meterToFeet();
-        } else if (Length.isMeterToInches()) {
-            meterToInches();
-        } else if (Length.isMeterToMiles()) {
-            meterToMiles();
-        } else if (Length.isKilometerToMeter()) {
-            kilometerToMeter();
-        } else if (Length.isKilometerToFeet()) {
-            kilometerToFeet();
-        } else if (Length.isKilometerToInches()) {
-            kilometerToInches();
-        } else if (Length.isKilometerToMiles()) {
-            kilometerToMiles();
-        } else if (Length.isFeetToMeter()) {
-            feetToMeter();
-        } else if (Length.isFeetToKilometer()) {
-            feetToKilometer();
-        } else if (Length.isFeetToInches()) {
-            feetToInches();
-        } else if (Length.isFeetToMiles()) {
-            feetToMiles();
-        } else if (Length.isInchesToMeter()) {
-            inchesToMeter();
-        } else if (Length.isInchesToKilometer()) {
-            inchesToKilometer();
-        } else if (Length.isInchesToFeet()) {
-            inchesToFeet();
-        } else if (Length.isInchesToMiles()) {
-            inchesToMiles();
-        } else if (Length.isMilesToMeter()) {
-            milesToMeter();
-        } else if (Length.isMilesToKilometer()) {
-            milesToKilometer();
-        } else if (Length.isMilesToFeet()) {
-            milesToFeet();
-        } else if (Length.isMilesToInches()) {
-            milesToInches();
-        } else {
-            solution = "ERROR!";
+        switch (length.getCurrentConversion()) {
+            case Length.SAME_UNITS:
+                convertSame();
+                break;
+            case Length.METER_TO_KILOMETER:
+                meterToKilometer();
+                break;
+            case Length.METER_TO_FEET:
+                meterToFeet();
+                break;
+            case Length.METER_TO_INCHES:
+                meterToInches();
+                break;
+            case Length.METER_TO_MILES:
+                meterToMiles();
+                break;
+            case Length.KILOMETER_TO_METER:
+                kilometerToMeter();
+                break;
+            case Length.KILOMETER_TO_FEET:
+                kilometerToFeet();
+                break;
+            case Length.KILOMETER_TO_INCHES:
+                kilometerToInches();
+                break;
+            case Length.KILOMETER_TO_MILES:
+                kilometerToMiles();
+                break;
+            case Length.FEET_TO_METER:
+                feetToMeter();
+                break;
+            case Length.FEET_TO_KILOMETER:
+                feetToKilometer();
+                break;
+            case Length.FEET_TO_INCHES:
+                feetToInches();
+                break;
+            case Length.FEET_TO_MILES:
+                feetToMiles();
+                break;
+            case Length.INCHES_TO_METER:
+                inchesToMeter();
+                break;
+            case Length.INCHES_TO_KILOMETER:
+                inchesToKilometer();
+                break;
+            case Length.INCHES_TO_FEET:
+                inchesToFeet();
+                break;
+            case Length.INCHES_TO_MILES:
+                inchesToMiles();
+                break;
+            case Length.MILES_TO_METER:
+                milesToMeter();
+                break;
+            case Length.MILES_TO_KILOMETER:
+                milesToKilometer();
+                break;
+            case Length.MILES_TO_FEET:
+                milesToFeet();
+                break;
+            case Length.MILES_TO_INCHES:
+                milesToInches();
+                break;
+            default:
+                solution = "ERROR!";
+                break;
         }
     }
 

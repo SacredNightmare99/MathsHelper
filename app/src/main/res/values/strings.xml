@@ -40,7 +40,7 @@
     <string name="blue_theme">Blue Theme</string>
     <string name="length_converter">Length Converter</string>
     <string name="to">to</string>
-    <string name="number">Number</string>
     <string name="_0_00000">0.00000</string>
     <string name="placeholder">placeholder</string>
+    <string name="value">value</string>
 </resources>

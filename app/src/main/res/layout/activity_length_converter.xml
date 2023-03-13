@@ -85,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:ems="7"
-                android:hint="@string/number"
+                android:hint="@string/value"
                 android:importantForAutofill="no"
                 android:inputType="numberDecimal|number"
                 android:minHeight="48dp"
