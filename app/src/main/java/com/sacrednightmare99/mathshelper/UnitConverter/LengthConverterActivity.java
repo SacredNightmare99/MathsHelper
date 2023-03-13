@@ -44,7 +44,6 @@ public class LengthConverterActivity extends AppCompatActivity {
         initWidgets();
         loadSharedPreferences();
 
-
         backBtn.setOnClickListener(View -> finish());
 
         ArrayList<String> unitsList = new ArrayList<>();
