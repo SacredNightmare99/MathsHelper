@@ -55,6 +55,14 @@ public class CustomAdapter extends ArrayAdapter<String> {
     private String getAbbreviation(String item) {
         if ("Kilometers".equals(item)) {
             return "Km";
+        } else if ("Meter per second".equals(item)) {
+            return "M/s";
+        } else if ("Kilometer per hour".equals(item)) {
+            return "Km/h";
+        } else if ("Foot per second".equals(item)) {
+            return "Foot/s";
+        } else if ("Miles per hour".equals(item)) {
+            return "Mi/h";
         } else {
             return item;
         }

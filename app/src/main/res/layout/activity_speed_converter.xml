@@ -6,14 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context=".UnitConverter.LengthConverterActivity">
+    tools:context=".UnitConverter.SpeedConverterActivity">
 
     <TextView
         android:id="@+id/txtSpeedConverterTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
-        android:text="@string/length_converter"
+        android:text="@string/speed_converter"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -133,5 +133,6 @@
         app:layout_constraintEnd_toEndOf="@+id/speedConverterSolveBtn"
         app:layout_constraintStart_toStartOf="@+id/speedConverterSolveBtn"
         app:layout_constraintTop_toBottomOf="@+id/speedConverterSolveBtn" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,6 +13,11 @@
         android:theme="@style/Theme.MathsHelper"
         tools:targetApi="31">
         <activity
+            android:name=".UnitConverter.SpeedConverterActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
             android:name=".UnitConverter.LengthConverterActivity"
             android:exported="false"
             android:screenOrientation="portrait"

@@ -34,6 +34,7 @@ public class LengthConverterActivity extends AppCompatActivity {
     private EditText input;
     private String solution;
     private Length length;
+    private ArrayList<String> unitsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +47,7 @@ public class LengthConverterActivity extends AppCompatActivity {
 
         backBtn.setOnClickListener(View -> finish());
 
-        ArrayList<String> unitsList = new ArrayList<>();
+        unitsList = new ArrayList<>();
         unitsList.add("Meters");
         unitsList.add("Kilometers");
         unitsList.add("Feet");
@@ -79,57 +80,57 @@ public class LengthConverterActivity extends AppCompatActivity {
     private void initWidgets() {
         parentView = findViewById(R.id.parentView);
         actionBar = getSupportActionBar();
-        firstUnitSP = findViewById(R.id.lengthConverter1SP);
-        secondUnitSP = findViewById(R.id.lengthConverter2SP);
-        backBtn = findViewById(R.id.lengthConverterBackBtn);
-        solveBtn = findViewById(R.id.lengthConverterSolveBtn);
-        solutionView = findViewById(R.id.lengthConverterOutput);
-        input = findViewById(R.id.lengthConverterInput);
+        firstUnitSP = findViewById(R.id.speedConverter1SP);
+        secondUnitSP = findViewById(R.id.speedConverter2SP);
+        backBtn = findViewById(R.id.speedConverterBackBtn);
+        solveBtn = findViewById(R.id.speedConverterSolveBtn);
+        solutionView = findViewById(R.id.speedConverterOutput);
+        input = findViewById(R.id.speedConverterInput);
         length = new Length();
     }
 
     private void checkWhatToConvert() {
         if (firstUnitSP.getSelectedItem().equals(secondUnitSP.getSelectedItem()) || secondUnitSP.getSelectedItem().equals(firstUnitSP.getSelectedItem())) {
             length.setCurrentConversion(Length.SAME_UNITS);
-        } else if (firstUnitSP.getSelectedItem().toString().equals("Meters") && secondUnitSP.getSelectedItem().toString().equals("Kilometers")) {
+        } else if (firstUnitSP.getSelectedItem().toString().equals(unitsList.get(0)) && secondUnitSP.getSelectedItem().toString().equals(unitsList.get(1))) {
             length.setCurrentConversion(Length.METER_TO_KILOMETER);
-        } else if (firstUnitSP.getSelectedItem().toString().equals("Meters") && secondUnitSP.getSelectedItem().toString().equals("Feet")) {
+        } else if (firstUnitSP.getSelectedItem().toString().equals(unitsList.get(0)) && secondUnitSP.getSelectedItem().toString().equals(unitsList.get(2))) {
             length.setCurrentConversion(Length.METER_TO_FEET);
-        } else if (firstUnitSP.getSelectedItem().toString().equals("Meters") && secondUnitSP.getSelectedItem().toString().equals("Inches")) {
+        } else if (firstUnitSP.getSelectedItem().toString().equals(unitsList.get(0)) && secondUnitSP.getSelectedItem().toString().equals(unitsList.get(3))) {
             length.setCurrentConversion(Length.METER_TO_INCHES);
-        } else if (firstUnitSP.getSelectedItem().toString().equals("Meters") && secondUnitSP.getSelectedItem().toString().equals("Miles")) {
+        } else if (firstUnitSP.getSelectedItem().toString().equals(unitsList.get(0)) && secondUnitSP.getSelectedItem().toString().equals(unitsList.get(4))) {
             length.setCurrentConversion(Length.METER_TO_MILES);
-        } else if (firstUnitSP.getSelectedItem().toString().equals("Kilometers") && secondUnitSP.getSelectedItem().toString().equals("Meters")) {
+        } else if (firstUnitSP.getSelectedItem().toString().equals(unitsList.get(1)) && secondUnitSP.getSelectedItem().toString().equals(unitsList.get(0))) {
             length.setCurrentConversion(Length.KILOMETER_TO_METER);
-        } else if (firstUnitSP.getSelectedItem().toString().equals("Kilometers") && secondUnitSP.getSelectedItem().toString().equals("Feet")) {
+        } else if (firstUnitSP.getSelectedItem().toString().equals(unitsList.get(1)) && secondUnitSP.getSelectedItem().toString().equals(unitsList.get(2))) {
             length.setCurrentConversion(Length.KILOMETER_TO_FEET);
-        } else if (firstUnitSP.getSelectedItem().toString().equals("Kilometers") && secondUnitSP.getSelectedItem().toString().equals("Inches")) {
+        } else if (firstUnitSP.getSelectedItem().toString().equals(unitsList.get(1)) && secondUnitSP.getSelectedItem().toString().equals(unitsList.get(3))) {
             length.setCurrentConversion(Length.KILOMETER_TO_INCHES);
-        } else if (firstUnitSP.getSelectedItem().toString().equals("Kilometers") && secondUnitSP.getSelectedItem().toString().equals("Miles")) {
+        } else if (firstUnitSP.getSelectedItem().toString().equals(unitsList.get(1)) && secondUnitSP.getSelectedItem().toString().equals(unitsList.get(4))) {
             length.setCurrentConversion(Length.KILOMETER_TO_MILES);
-        } else if (firstUnitSP.getSelectedItem().toString().equals("Feet") && secondUnitSP.getSelectedItem().toString().equals("Meters")) {
+        } else if (firstUnitSP.getSelectedItem().toString().equals(unitsList.get(2)) && secondUnitSP.getSelectedItem().toString().equals(unitsList.get(0))) {
             length.setCurrentConversion(Length.FEET_TO_METER);
-        } else if (firstUnitSP.getSelectedItem().toString().equals("Feet") && secondUnitSP.getSelectedItem().toString().equals("Kilometers")) {
+        } else if (firstUnitSP.getSelectedItem().toString().equals(unitsList.get(2)) && secondUnitSP.getSelectedItem().toString().equals(unitsList.get(1))) {
             length.setCurrentConversion(Length.FEET_TO_KILOMETER);
-        } else if (firstUnitSP.getSelectedItem().toString().equals("Feet") && secondUnitSP.getSelectedItem().toString().equals("Inches")) {
+        } else if (firstUnitSP.getSelectedItem().toString().equals(unitsList.get(2)) && secondUnitSP.getSelectedItem().toString().equals(unitsList.get(3))) {
             length.setCurrentConversion(Length.FEET_TO_INCHES);
-        } else if (firstUnitSP.getSelectedItem().toString().equals("Feet") && secondUnitSP.getSelectedItem().toString().equals("Miles")) {
+        } else if (firstUnitSP.getSelectedItem().toString().equals(unitsList.get(2)) && secondUnitSP.getSelectedItem().toString().equals(unitsList.get(4))) {
             length.setCurrentConversion(Length.FEET_TO_MILES);
-        } else if (firstUnitSP.getSelectedItem().toString().equals("Inches") && secondUnitSP.getSelectedItem().toString().equals("Meters")) {
+        } else if (firstUnitSP.getSelectedItem().toString().equals(unitsList.get(3)) && secondUnitSP.getSelectedItem().toString().equals(unitsList.get(0))) {
             length.setCurrentConversion(Length.INCHES_TO_METER);
-        } else if (firstUnitSP.getSelectedItem().toString().equals("Inches") && secondUnitSP.getSelectedItem().toString().equals("Kilometers")) {
+        } else if (firstUnitSP.getSelectedItem().toString().equals(unitsList.get(3)) && secondUnitSP.getSelectedItem().toString().equals(unitsList.get(1))) {
             length.setCurrentConversion(Length.INCHES_TO_KILOMETER);
-        } else if (firstUnitSP.getSelectedItem().toString().equals("Inches") && secondUnitSP.getSelectedItem().toString().equals("Feet")) {
+        } else if (firstUnitSP.getSelectedItem().toString().equals(unitsList.get(3)) && secondUnitSP.getSelectedItem().toString().equals(unitsList.get(2))) {
             length.setCurrentConversion(Length.INCHES_TO_FEET);
-        } else if (firstUnitSP.getSelectedItem().toString().equals("Inches") && secondUnitSP.getSelectedItem().toString().equals("Miles")) {
+        } else if (firstUnitSP.getSelectedItem().toString().equals(unitsList.get(3)) && secondUnitSP.getSelectedItem().toString().equals(unitsList.get(4))) {
             length.setCurrentConversion(Length.INCHES_TO_MILES);
-        } else if (firstUnitSP.getSelectedItem().toString().equals("Miles") && secondUnitSP.getSelectedItem().toString().equals("Meters")) {
+        } else if (firstUnitSP.getSelectedItem().toString().equals(unitsList.get(4)) && secondUnitSP.getSelectedItem().toString().equals(unitsList.get(0))) {
             length.setCurrentConversion(Length.MILES_TO_METER);
-        } else if (firstUnitSP.getSelectedItem().toString().equals("Miles") && secondUnitSP.getSelectedItem().toString().equals("Kilometers")) {
+        } else if (firstUnitSP.getSelectedItem().toString().equals(unitsList.get(4)) && secondUnitSP.getSelectedItem().toString().equals(unitsList.get(1))) {
             length.setCurrentConversion(Length.MILES_TO_KILOMETER);
-        } else if (firstUnitSP.getSelectedItem().toString().equals("Miles") && secondUnitSP.getSelectedItem().toString().equals("Feet")) {
+        } else if (firstUnitSP.getSelectedItem().toString().equals(unitsList.get(4)) && secondUnitSP.getSelectedItem().toString().equals(unitsList.get(2))) {
             length.setCurrentConversion(Length.MILES_TO_FEET);
-        } else if (firstUnitSP.getSelectedItem().toString().equals("Miles") && secondUnitSP.getSelectedItem().toString().equals("Inches")) {
+        } else if (firstUnitSP.getSelectedItem().toString().equals(unitsList.get(4)) && secondUnitSP.getSelectedItem().toString().equals(unitsList.get(3))) {
             length.setCurrentConversion(Length.MILES_TO_INCHES);
         }
     }

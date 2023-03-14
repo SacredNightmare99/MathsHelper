@@ -37,6 +37,9 @@ public class UnitConverterMenuActivity extends AppCompatActivity {
 
         Button lengthBtn = findViewById(R.id.lengthConvertBtn);
         lengthBtn.setOnClickListener(View -> startActivity(new Intent(UnitConverterMenuActivity.this, LengthConverterActivity.class)));
+
+        Button speedBtn = findViewById(R.id.speedConvertBtn);
+        speedBtn.setOnClickListener(View -> startActivity(new Intent(UnitConverterMenuActivity.this, SpeedConverterActivity.class)));
     }
 
     private void loadSharedPreferences() {

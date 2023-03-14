@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Unit Converters"
+        android:text="@string/unit_converters"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,17 +26,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:text="Length"
+        android:text="@string/length"
         app:layout_constraintEnd_toEndOf="@+id/txtUnitConverterMenuTitle"
         app:layout_constraintStart_toStartOf="@+id/txtUnitConverterMenuTitle"
         app:layout_constraintTop_toBottomOf="@+id/txtUnitConverterMenuTitle" />
 
     <Button
+        android:id="@+id/speedConvertBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/speed"
+        app:layout_constraintEnd_toEndOf="@+id/lengthConvertBtn"
+        app:layout_constraintStart_toStartOf="@+id/lengthConvertBtn"
+        app:layout_constraintTop_toBottomOf="@+id/lengthConvertBtn" />
+
+    <Button
         android:id="@+id/unitConvertBackBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/back"
         android:layout_marginBottom="100dp"
+        android:text="@string/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

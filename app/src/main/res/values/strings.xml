@@ -43,4 +43,8 @@
     <string name="_0_00000">0.00000</string>
     <string name="placeholder">placeholder</string>
     <string name="value">value</string>
+    <string name="unit_converters">Unit Converters</string>
+    <string name="length">Length</string>
+    <string name="speed">Speed</string>
+    <string name="speed_converter">Speed Converter</string>
 </resources>
