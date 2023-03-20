@@ -58,11 +58,11 @@ public class CustomAdapter extends ArrayAdapter<String> {
         } else if ("Meter per second".equals(item)) {
             return "M/s";
         } else if ("Kilometer per hour".equals(item)) {
-            return "Km/h";
+            return "Km/hr";
         } else if ("Foot per second".equals(item)) {
             return "Foot/s";
         } else if ("Miles per hour".equals(item)) {
-            return "Mi/h";
+            return "Miles/hr";
         } else {
             return item;
         }
