@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,7 +38,15 @@ public class ComplexActivity extends AppCompatActivity {
 
         backBtn.setOnClickListener(View -> finish());
 
-        solveBtn.setOnClickListener(View -> solve());
+        solveBtn.setOnClickListener(View -> {
+            cmplxNumberSolView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
+            polarSolView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
+            eulerSolView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
+            conjugateSolView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
+            modSolView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
+            argSolView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
+            solve();
+        });
 
         updateTextSize(cmplxNumberSolView);
         updateTextSize(polarSolView);
@@ -124,7 +133,7 @@ public class ComplexActivity extends AppCompatActivity {
             @Override
             public void run() {
                 while(textView.getLineCount() > 1){
-                    textView.setTextSize(textSize[0]--);
+                    textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize[0]--);
                 }
                 handler.postDelayed(this, 1000);
             }

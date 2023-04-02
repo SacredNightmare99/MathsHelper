@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -55,6 +56,7 @@ public class Degree3EquationActivity extends AppCompatActivity {
         });
 
         solveBtn.setOnClickListener(View -> {
+            solutionView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
             int checkedRBID = radioGroup.getCheckedRadioButtonId();
             if (checkedRBID == R.id.degree3RealRootsRB) {
                 solveReal();
@@ -297,7 +299,7 @@ public class Degree3EquationActivity extends AppCompatActivity {
             @Override
             public void run() {
                 while(textView.getLineCount() > 1){
-                    textView.setTextSize(textSize[0]--);
+                    textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize[0]--);
                 }
                 handler.postDelayed(this, 1000);
             }

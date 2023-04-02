@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,6 +27,7 @@ public class Degree2RootsActivity extends AppCompatActivity {
     private UserSettings userSettings;
     private ActionBar actionBar;
     private View parentView;
+    private String solution = "Root1:   Root2:";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +38,15 @@ public class Degree2RootsActivity extends AppCompatActivity {
         initWidgets();
         loadSharedPreferences();
 
+        solutionView.setText(solution);
+
         backBtn.setOnClickListener(View -> finish());
 
-        solveBtn.setOnClickListener(View -> solve());
+        solveBtn.setOnClickListener(View -> {
+            solutionView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+            solve();
+            solutionView.setText(solution);
+        });
 
         // To change the font size
         updateTextSize(solutionView);
@@ -59,7 +67,6 @@ public class Degree2RootsActivity extends AppCompatActivity {
         DecimalFormat df = new DecimalFormat("#.##");
         double a, b, c;
         double x1, x2;
-        String solution;
 
         // Validate
         if (coeffA.getText().toString().isEmpty() || coeffB.getText().toString().isEmpty() || coeffC.getText().toString().isEmpty()) {
@@ -94,8 +101,6 @@ public class Degree2RootsActivity extends AppCompatActivity {
         } else {
             solution = "ERROR";
         }
-
-        solutionView.setText(solution);
     }
 
     private void loadSharedPreferences() {
@@ -128,14 +133,13 @@ public class Degree2RootsActivity extends AppCompatActivity {
 
     private void updateTextSize(TextView textView) {
         textView.setMaxLines(1);
-        final float[] textSize = {20};
-
+        final float[] size = {(float) 20};
         final Handler handler = new Handler();
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
                 while(textView.getLineCount() > 1){
-                    textView.setTextSize(textSize[0]--);
+                    textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, size[0]--);
                 }
 
                 handler.postDelayed(this, 1000);
