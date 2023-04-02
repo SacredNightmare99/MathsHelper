@@ -47,4 +47,5 @@
     <string name="length">Length</string>
     <string name="speed">Speed</string>
     <string name="speed_converter">Speed Converter</string>
+    <string name="icon">Icon</string>
 </resources>
