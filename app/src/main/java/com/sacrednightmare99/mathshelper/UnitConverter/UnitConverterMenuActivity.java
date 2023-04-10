@@ -33,5 +33,9 @@ public class UnitConverterMenuActivity extends ActivityClass {
 
         Button speedBtn = findViewById(R.id.speedConvertBtn);
         speedBtn.setOnClickListener(View -> startActivity(new Intent(UnitConverterMenuActivity.this, SpeedConverterActivity.class)));
+
+        Button energyBtn = findViewById(R.id.energyConvertBtn);
+        energyBtn.setOnClickListener(View -> startActivity(new Intent(UnitConverterMenuActivity.this, EnergyConverterActivity.class)));
+
     }
 }

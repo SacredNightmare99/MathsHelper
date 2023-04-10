@@ -76,12 +76,12 @@ public class LengthConverterActivity extends ActivityClass {
     private void initWidgets() {
         parentView = findViewById(R.id.parentView);
         actionBar = getSupportActionBar();
-        firstUnitSP = findViewById(R.id.speedConverter1SP);
-        secondUnitSP = findViewById(R.id.speedConverter2SP);
-        backBtn = findViewById(R.id.speedConverterBackBtn);
-        solveBtn = findViewById(R.id.speedConverterSolveBtn);
-        solutionView = findViewById(R.id.speedConverterOutput);
-        input = findViewById(R.id.speedConverterInput);
+        firstUnitSP = findViewById(R.id.lengthConverter1SP);
+        secondUnitSP = findViewById(R.id.lengthConverter2SP);
+        backBtn = findViewById(R.id.lengthConverterBackBtn);
+        solveBtn = findViewById(R.id.lengthConverterSolveBtn);
+        solutionView = findViewById(R.id.lengthConverterOutput);
+        input = findViewById(R.id.lengthConverterInput);
         length = new Length();
     }
 

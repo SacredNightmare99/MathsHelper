@@ -42,6 +42,16 @@
         app:layout_constraintTop_toBottomOf="@+id/lengthConvertBtn" />
 
     <Button
+        android:id="@+id/energyConvertBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/energy"
+        app:layout_constraintEnd_toEndOf="@+id/speedConvertBtn"
+        app:layout_constraintStart_toStartOf="@+id/speedConvertBtn"
+        app:layout_constraintTop_toBottomOf="@+id/speedConvertBtn" />
+
+    <Button
         android:id="@+id/unitConvertBackBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
