@@ -51,4 +51,6 @@
     <string name="green_theme">Green Theme</string>
     <string name="yellow_theme">Yellow Theme</string>
     <string name="pink_theme">Pink Theme</string>
+    <string name="energy_converter">Energy Converter</string>
+    <string name="energy">Energy</string>
 </resources>
