@@ -1,7 +1,5 @@
 package com.sacrednightmare99.mathshelper.Degree2;
 
-import android.content.SharedPreferences;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.TypedValue;
@@ -12,19 +10,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
+import com.sacrednightmare99.mathshelper.ActivityClass;
 import com.sacrednightmare99.mathshelper.R;
 import com.sacrednightmare99.mathshelper.Settings.UserSettings;
 
 import java.text.DecimalFormat;
 
-public class Degree2RootsActivity extends AppCompatActivity {
+public class Degree2RootsActivity extends ActivityClass {
     private TextView solutionView;
     private EditText coeffA, coeffB, coeffC;
     private Button backBtn, solveBtn;
-    private UserSettings userSettings;
     private ActionBar actionBar;
     private View parentView;
     private String solution = "Root1:   Root2:";
@@ -34,9 +30,9 @@ public class Degree2RootsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_degree2_roots);
 
-        userSettings = (UserSettings) getApplication();
+        UserSettings userSettings = (UserSettings) getApplication();
         initWidgets();
-        loadSharedPreferences();
+        loadSharedPreferences(userSettings, parentView, actionBar);
 
         solutionView.setText(solution);
 
@@ -100,34 +96,6 @@ public class Degree2RootsActivity extends AppCompatActivity {
             }
         } else {
             solution = "ERROR";
-        }
-    }
-
-    private void loadSharedPreferences() {
-        SharedPreferences preferences = getSharedPreferences(UserSettings.PREFERENCES, MODE_PRIVATE);
-        String theme = preferences.getString(UserSettings.CUSTOM_THEME, UserSettings.NO_THEME);
-        userSettings.setCustomTheme(theme);
-        updateView();
-    }
-
-    private void updateView() {
-        final int white = ContextCompat.getColor(this, R.color.white);
-        final int red = ContextCompat.getColor(this, R.color.red);
-        final int blue = ContextCompat.getColor(this, R.color.blue);
-
-        switch (userSettings.getCustomTheme()) {
-            case UserSettings.NO_THEME:
-                parentView.setBackgroundColor(white);
-                actionBar.setBackgroundDrawable(new ColorDrawable(white));
-                break;
-            case UserSettings.RED_THEME:
-                parentView.setBackgroundColor(red);
-                actionBar.setBackgroundDrawable(new ColorDrawable(red));
-                break;
-            case UserSettings.BLUE_THEME:
-                parentView.setBackgroundColor(blue);
-                actionBar.setBackgroundDrawable(new ColorDrawable(blue));
-                break;
         }
     }
 

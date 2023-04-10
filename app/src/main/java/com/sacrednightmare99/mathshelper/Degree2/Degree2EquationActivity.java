@@ -1,11 +1,5 @@
 package com.sacrednightmare99.mathshelper.Degree2;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
-import android.content.SharedPreferences;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.TypedValue;
@@ -16,15 +10,17 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
+
+import com.sacrednightmare99.mathshelper.ActivityClass;
 import com.sacrednightmare99.mathshelper.R;
 import com.sacrednightmare99.mathshelper.Settings.UserSettings;
 
 import java.text.DecimalFormat;
 
-public class Degree2EquationActivity extends AppCompatActivity {
+public class Degree2EquationActivity extends ActivityClass {
 
     private View parentView;
-    private UserSettings userSettings;
     private ActionBar actionBar;
     private Button backBtn, solveBtn;
     private EditText realRoot1, realRoot2, unrealRootReal, unrealRootImage;
@@ -38,9 +34,9 @@ public class Degree2EquationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_degree2_equation);
 
-        userSettings = (UserSettings) getApplication();
+        UserSettings userSettings = (UserSettings) getApplication();
         initWidgets();
-        loadSharedPreferences();
+        loadSharedPreferences(userSettings, parentView, actionBar);
 
         backBtn.setOnClickListener(View -> finish());
 
@@ -152,34 +148,6 @@ public class Degree2EquationActivity extends AppCompatActivity {
         realRoot2.setText("");
         unrealRootReal.setText("");
         unrealRootImage.setText("");
-    }
-
-    private void loadSharedPreferences() {
-        SharedPreferences preferences = getSharedPreferences(UserSettings.PREFERENCES, MODE_PRIVATE);
-        String theme = preferences.getString(UserSettings.CUSTOM_THEME, UserSettings.NO_THEME);
-        userSettings.setCustomTheme(theme);
-        updateView();
-    }
-
-    private void updateView() {
-        final int white = ContextCompat.getColor(this, R.color.white);
-        final int red = ContextCompat.getColor(this, R.color.red);
-        final int blue = ContextCompat.getColor(this, R.color.blue);
-
-        switch (userSettings.getCustomTheme()) {
-            case UserSettings.NO_THEME:
-                parentView.setBackgroundColor(white);
-                actionBar.setBackgroundDrawable(new ColorDrawable(white));
-                break;
-            case UserSettings.RED_THEME:
-                parentView.setBackgroundColor(red);
-                actionBar.setBackgroundDrawable(new ColorDrawable(red));
-                break;
-            case UserSettings.BLUE_THEME:
-                parentView.setBackgroundColor(blue);
-                actionBar.setBackgroundDrawable(new ColorDrawable(blue));
-                break;
-        }
     }
 
     private void updateTextSize(TextView textView) {

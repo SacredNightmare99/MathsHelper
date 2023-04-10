@@ -8,6 +8,9 @@ public class UserSettings extends Application {
     public static final String NO_THEME = "noTheme";
     public static final String RED_THEME = "redTheme";
     public static final String BLUE_THEME = "blueTheme";
+    public static final String GREEN_THEME = "greenTheme";
+    public static final String YELLOW_THEME = "yellowTheme";
+    public static final String PINK_THEME = "pinkTheme";
 
     private String customTheme;
 

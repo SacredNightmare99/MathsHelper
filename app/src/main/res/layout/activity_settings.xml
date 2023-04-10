@@ -31,41 +31,72 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtSettingsTitle" />
 
-    <RadioGroup
-        android:id="@+id/settingsThemeRG"
-        android:layout_width="0dp"
+    <HorizontalScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtSettingsTheme">
 
-        <RadioButton
-            android:id="@+id/settingsNoThemeRB"
+        <RadioGroup
+            android:id="@+id/settingsThemeRG"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="1dp"
-            android:text="@string/no_theme"
-            android:textStyle="italic" />
+            android:orientation="horizontal"
+            tools:ignore="VisualLintBounds">
 
-        <RadioButton
-            android:id="@+id/settingsRedThemeRB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="1dp"
-            android:text="@string/red_theme"
-            android:textStyle="italic" />
+            <RadioButton
+                android:id="@+id/settingsNoThemeRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:text="@string/no_theme"
+                android:textStyle="italic" />
 
-        <RadioButton
-            android:id="@+id/settingsBlueThemeRB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="1dp"
-            android:text="@string/blue_theme"
-            android:textStyle="italic" />
+            <RadioButton
+                android:id="@+id/settingsRedThemeRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:text="@string/red_theme"
+                android:textStyle="italic" />
 
-    </RadioGroup>
+            <RadioButton
+                android:id="@+id/settingsBlueThemeRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:text="@string/blue_theme"
+                android:textStyle="italic" />
+
+            <RadioButton
+                android:id="@+id/settingsGreenThemeRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:text="@string/green_theme"
+                android:textStyle="italic" />
+
+            <RadioButton
+                android:id="@+id/settingsYellowThemeRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:text="@string/yellow_theme"
+                android:textStyle="italic" />
+
+            <RadioButton
+                android:id="@+id/settingsPinkThemeRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:text="@string/pink_theme"
+                android:textStyle="italic" />
+
+        </RadioGroup>
+
+    </HorizontalScrollView>
 
     <Button
         android:id="@+id/settingsBackBtn"
